@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
     <div class="main-content">
@@ -36,13 +37,6 @@
             </div>
         </div>
     </div>
-    <script>
-        // prosty skrypt do ładowania include-html
-        document.querySelectorAll('[include-html]').forEach(async el => {
-            const file = el.getAttribute('include-html');
-            const res = await fetch(file);
-            if (res.ok) el.innerHTML = await res.text();
-        });
-    </script>
+    <script src="javascript/html-include.js"></script>
 </body>
 </html>

@@ -39,13 +39,6 @@
             </div>
         </div>
     </div>
-    <script>
-        // prosty skrypt do ładowania include-html
-        document.querySelectorAll('[include-html]').forEach(async el => {
-            const file = el.getAttribute('include-html');
-            const res = await fetch(file);
-            if (res.ok) el.innerHTML = await res.text();
-        });
-    </script>
+    <script src="javascript/html-include.js"></script>
 </body>
 </html>
