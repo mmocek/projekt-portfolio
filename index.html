@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-content">
+        <div class="content-row">
+            <div class="left-section">
+                <img src="images/main-photo.avif" alt="Zdjęcie portretowe Mikołaja Mocka">
+                <h1>Mikołaj Mocek</h1>
+            </div>
+            <div class="right-section">
+                <div include-html="nav.html"></div>
+                <div class="text-section">
+                    <p>
+                        Posiadam solidną wiedzę oraz praktyczne doświadczenie w tworzeniu stron internetowych z wykorzystaniem technologii HTML i CSS, co pozwala mi na efektywne
+                        budowanie nowoczesnych, responsywnych i estetycznych interfejsów użytkownika. Dobrze orientuję się w zasadach semantyki, dostępności oraz optymalizacji 
+                        pod kątem SEO.
+                    </p>
+                    <p>
+                        Dodatkowo biegle posługuję się językiem JavaScript, co umożliwia mi tworzenie dynamicznych i interaktywnych elementów na stronach internetowych. Znam podstawy
+                            pracy z DOM, potrafię implementować logikę aplikacji oraz korzystać z popularnych wzorców programowania. 
+                    </p>
+                    <p>
+                        Mam również dobrą znajomość języka PHP, dzięki czemu potrafię tworzyć funkcjonalności po stronie serwera, obsługiwać formularze, komunikować się z bazami
+                        danych oraz tworzyć proste systemy CMS. Rozumiem zasady działania aplikacji typu backend oraz potrafię integrować frontend z backendem.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // prosty skrypt do ładowania include-html
+        document.querySelectorAll('[include-html]').forEach(async el => {
+            const file = el.getAttribute('include-html');
+            const res = await fetch(file);
+            if (res.ok) el.innerHTML = await res.text();
+        });
+    </script>
+</body>
+</html>

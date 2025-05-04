@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-content">
+        <div class="content-row">
+            <div class="left-section">
+                <img src="images/project-1.png" alt="Projekt wizytówki" class="project-image">
+                <a href="#" class="link-style">wizytówka</a> <!-- na razie nie działa, bo nie ma pliku wizytówka.html -->
+            </div>
+            <div class="right-section">
+                <div include-html="nav.html"></div>
+                <div class="text-section">
+                    <h2>Projekt "wizytówka"</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras magna risus, luctus in suscipit nec, mollis in nibh. Vestibulum facilisis mi orci, in ultrices neque laoreet vitae. Nam ornare eget justo in vestibulum. Quisque euismod malesuada erat, sit amet malesuada velit malesuada at. In laoreet ut diam eu viverra. Nullam cursus lacus justo, quis fermentum mauris dictum vel. Nunc justo mi, dapibus et vehicula et, tincidunt quis sapien. Donec sagittis quis lacus eget congue. Aenean interdum faucibus neque non ultricies. Morbi ullamcorper aliquam metus, et rhoncus sem imperdiet ut. Curabitur dignissim purus pulvinar fermentum cursus.
+                    </p>
+                    <p>
+                        Sed ac neque a tellus ornare porta. Donec tincidunt arcu a libero dictum volutpat. Maecenas vitae odio vel nulla convallis porttitor vitae ac augue. Nunc ultrices, augue ut facilisis gravida, lacus diam suscipit leo, egestas fringilla nisl lorem at dolor. Sed quis tellus sit amet leo scelerisque volutpat ut ac justo. Donec rutrum a elit a feugiat. Ut maximus sapien commodo, molestie justo ut, iaculis lacus. Vestibulum at purus id sem sagittis faucibus eget ut enim. Fusce non egestas leo. Donec posuere elit cursus turpis aliquam, eget gravida odio lobortis. Etiam nec tortor nec purus ullamcorper consequat a eu ipsum.
+                    </p>
+                    <p>
+                        Ut placerat pellentesque dui a interdum. Aliquam ut ultrices mi. Etiam eleifend tincidunt enim quis semper. Sed vestibulum diam nec semper vulputate. Etiam euismod vel lacus vitae ultrices. Donec luctus feugiat pharetra. Maecenas ac sagittis dolor.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl purus, vehicula id erat nec, tristique bibendum neque. Ut ut metus eu arcu semper tristique eu id velit. Nunc finibus ligula nec mauris dictum, at dapibus elit placerat. Phasellus tristique metus eget nisl pretium condimentum. Etiam consequat tincidunt quam sed sagittis. Nulla convallis a tellus id varius. Mauris pellentesque lorem sem. Vivamus ornare pellentesque tristique. Nunc tristique leo imperdiet tellus finibus, eu tempus ligula laoreet. Vestibulum gravida tristique maximus. Quisque mattis nisi eget varius vehicula. Vivamus in pharetra lorem.
+                    </p>
+                    <p>
+                        Vestibulum in quam volutpat, pellentesque diam vitae, convallis mi. Phasellus in malesuada orci, at congue nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam fermentum dolor nec ex sagittis dapibus. Mauris laoreet dolor at orci luctus malesuada. In maximus, dolor ut tincidunt auctor, elit metus rutrum sapien, nec rhoncus ex ante ac neque. Nunc dignissim nunc ac vehicula tincidunt. Aenean finibus scelerisque facilisis. Nunc porta euismod sapien, vel sollicitudin justo. Fusce rhoncus mollis neque eu rutrum. Aliquam volutpat scelerisque lacinia.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // prosty skrypt do ładowania include-html
+        document.querySelectorAll('[include-html]').forEach(async el => {
+            const file = el.getAttribute('include-html');
+            const res = await fetch(file);
+            if (res.ok) el.innerHTML = await res.text();
+        });
+    </script>
+</body>
+</html>
